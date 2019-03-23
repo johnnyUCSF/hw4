@@ -29,16 +29,13 @@ def test_encoding():
     ############
     ######this test all major encoding functions directly or indirectly by function calls within functions
     ############
-    ####read in filtered negatives
-    with open('negs_filtd.txt', 'r') as file:
-        neg = file.read().splitlines()
-    ####read in positives
-    with open('pos_filtd.txt', 'r') as file:
-        pos = file.read().splitlines()
+    neg = ['ATCG']
+    pos = ['TCGA']
     ####
-    neg_encoded,pos_encoded = EN.encode_pos_neg(neg,pos,17)
+    neg_encoded,pos_encoded = EN.encode_pos_neg(neg,pos,4)
+    print(neg_encoded)
     ####
-    assert neg_encoded[0]=='00010100100001000100100000101000100000011000100010000010100010001000'
+    assert neg_encoded[0]=='1000010000100001'
     
     
     
